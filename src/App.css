@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-image: url('./assets/galaxy-background.webp');
+  background-size:100vw 100vh;
+  background-position: right ;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -12,7 +16,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.imgmoonlight{
+  position:absolute ;
+  left:35vw ;
+  opacity:80%;
+  width:30vw ;
+  height:auto;
+  z-index: 2;
+  /*animation: rotatelight 8s linear infinite ;*/
+  transition: rotate 0.5s;
+  
+  
+  
+}
+@keyframes rotatelight {
+  from {rotate: 0deg;}
+  to {rotate: 359deg;}
+  
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,3 +57,121 @@
     transform: rotate(360deg);
   }
 }
+
+.container1 { 
+  height: 100vh; 
+  display: grid; 
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr); 
+  position: absolute; 
+  width: 100%; 
+  height: 100vh; 
+  top: 0; 
+  left: 0; 
+} 
+
+.cell { 
+  width: 100%; 
+  height: 100%; 
+  border: 1px solid gray; 
+  z-index: 2; 
+} 
+
+.cell:nth-child(10n+2):hover~.parent { 
+  --posX: 1; 
+
+} 
+
+.cell:nth-child(n+11):nth-child(-n+20):hover~.parent { 
+  --posY: 1; 
+} 
+
+.cell:nth-child(10n+3):hover~.parent { 
+  --posX: 2; 
+} 
+
+.cell:nth-child(n+21):nth-child(-n+30):hover~.parent { 
+  --posY: 2; 
+} 
+
+.cell:nth-child(10n+4):hover~.parent { 
+  --posX: 3; 
+} 
+
+.cell:nth-child(n+31):nth-child(-n+40):hover~.parent { 
+  --posY: 3; 
+} 
+
+.cell:nth-child(10n+5):hover~.parent { 
+  --posX: 4; 
+} 
+
+.cell:nth-child(n+41):nth-child(-n+50):hover~.parent { 
+  --posY: 4; 
+} 
+
+.cell:nth-child(10n+6):hover~.parent { 
+  --posX: 5; 
+} 
+
+.cell:nth-child(n+51):nth-child(-n+60):hover~.parent { 
+  --posY: 5; 
+} 
+
+.cell:nth-child(10n+7):hover~.parent { 
+  --posX: 6; 
+} 
+
+.cell:nth-child(n+61):nth-child(-n+70):hover~.parent { 
+  --posY: 6; 
+} 
+
+.cell:nth-child(10n+8):hover~.parent { 
+  --posX: 7; 
+} 
+
+.cell:nth-child(n+71):nth-child(-n+80):hover~.parent { 
+  --posY: 7; 
+} 
+
+.cell:nth-child(10n+9):hover~.parent { 
+  --posX: 8; 
+} 
+
+.cell:nth-child(n+81):nth-child(-n+90):hover~.parent { 
+  --posY: 8; 
+} 
+
+.cell:nth-child(10n+10):hover~.parent { 
+  --posX: 9; 
+} 
+
+.cell:nth-child(n+91):nth-child(-n+100):hover~.parent { 
+  --posY: 9; 
+} 
+
+.cell:nth-child(10n+11):hover~.parent { 
+  --posX: 10; 
+} 
+
+.cell:nth-child(n+101):nth-child(-n+110):hover~.parent { 
+  --posY: 10; 
+} 
+
+.parent { 
+  --posX: 0; 
+  --posY: 0; 
+
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+} 
+
+.imgmoonlight { 
+  
+  rotate:calc((var(--posY) + var(--posX)) * -18deg);
+} 
